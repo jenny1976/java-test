@@ -1,0 +1,8 @@
+language: JAVA
+jdk:
+  - oraclejdk8
+# whitelist
+branches:
+  only:
+    - master
+    - redis-version
