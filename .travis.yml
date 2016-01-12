@@ -1,8 +1,6 @@
 language: JAVA
 jdk:
   - oraclejdk8
-services:
-  - redis-server
 # whitelist
 branches:
   only:
