@@ -12,7 +12,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.7.RELEASE</version>
+        <version>1.2.8.RELEASE</version>
     </parent>
 
     <dependencies>
@@ -116,7 +116,6 @@
                         </goals>
                         <configuration>
                             <rules>
-                                <!--  implmentation is needed only for Maven 2  -->
                                 <rule implementation="org.jacoco.maven.RuleConfiguration">
                                     <element>BUNDLE</element>
                                     <limits>
@@ -125,7 +124,6 @@
                                             <value>COVEREDRATIO</value>
                                             <minimum>0.60</minimum>
                                         </limit>
-                                        <!--  implmentation is needed only for Maven 2  -->
                                         <limit implementation="org.jacoco.report.check.Limit">
                                             <counter>COMPLEXITY</counter>
                                             <value>COVEREDRATIO</value>

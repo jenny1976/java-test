@@ -65,7 +65,7 @@ public class ArticlesController {
     @RequestMapping( value = "/", method = PUT )
     public ResponseEntity<RsArticle> createArticle(final @RequestBody @Valid CreateArticle newArticle,
             final BindingResult validationResult ) {
-        if(validationResult.hasErrors()) {
+        if (validationResult.hasErrors()) {
             throw new IllegalArgumentException("There are invalid arguments in 'newArticle'.");
         }
 
@@ -93,14 +93,14 @@ public class ArticlesController {
     @RequestMapping( value = "/{articleId}", method = POST )
     public ResponseEntity<RsArticle> updateArticle(final @PathVariable("articleId") Long articleId,
             @RequestBody @Valid UpdateArticle updateArticle, final BindingResult validationResult) {
-        if(validationResult.hasErrors()) {
+        if (validationResult.hasErrors()) {
             throw new IllegalArgumentException("There are invalid arguments in 'updateArticle'.");
         }
 
         final Article article = articleService.updateArticle(ModelConverter.convertToJpaArticle(updateArticle, articleId));
 
         ResponseEntity<RsArticle> response;
-        if( article == null ) {
+        if (article == null) {
             response = new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             response = new ResponseEntity<>(ModelConverter.convert(article), HttpStatus.OK);
@@ -118,7 +118,7 @@ public class ArticlesController {
     public void deleteArticle(final @PathVariable("articleId") Long articleId) {
 
         boolean success = articleService.deleteArticle(articleId);
-        if(!success) {
+        if (!success) {
             throw new IllegalArgumentException("Invalid articleId!");
         }
     }
@@ -135,7 +135,7 @@ public class ArticlesController {
         final Article dbArticle = articleService.findOne(articleId);
 
         ResponseEntity<RsArticle> response;
-        if(dbArticle == null) {
+        if (dbArticle == null) {
             response = new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             response = new ResponseEntity<>(ModelConverter.convert(dbArticle), HttpStatus.OK);
@@ -172,7 +172,7 @@ public class ArticlesController {
 
         List<RsArticle> result;
 
-        if(fromDate.isBefore(toDate)) {
+        if (fromDate.isBefore(toDate)) {
 
             final List<Article> articles = articleService.findByDateRange(fromDate, toDate);
             result = ModelConverter.convertArticles(articles);

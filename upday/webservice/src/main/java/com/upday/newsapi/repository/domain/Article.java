@@ -79,7 +79,7 @@ public class Article implements Persistable<Long> {
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Author> authors;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
         name="NEWS_ARTICLE_KEYWORD",
         uniqueConstraints = {
@@ -92,6 +92,7 @@ public class Article implements Persistable<Long> {
             @JoinColumn(name="KEYWORD_ID", referencedColumnName="ID")
         }
     )
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Keyword> keywords;
 
     public String getHeadline() {
