@@ -1,1 +1,6 @@
 /upday/webservice/target/
+/upday/webservice/.settings/org.eclipse.wst.common.project.facet.core.xml
+/upday/webservice/.settings/org.eclipse.jdt.core.prefs
+/upday/webservice/.settings/org.eclipse.core.resources.prefs
+/upday/webservice/.settings/org.eclipse.m2e.core.prefs
+/upday/webservice/nbactions.xml
