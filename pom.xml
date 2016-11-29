@@ -108,13 +108,13 @@
                 <configuration>
                     <excludes>
                         <!-- Application starter -->
-                        <exclude>com/upday/newsapi/Application.class</exclude>
-                        <exclude>com/upday/newsapi/controller/WebServiceInitializer.class</exclude>
+                        <exclude>com/twitzer/newsapi/Application.class</exclude>
+                        <exclude>com/twitzer/newsapi/controller/WebServiceInitializer.class</exclude>
                         <!-- Configuration -->
-                        <exclude>com/upday/newsapi/configuration/*</exclude>
+                        <exclude>com/twitzer/newsapi/configuration/*</exclude>
                         <!-- POJOs -->
-                        <exclude>com/upday/newsapi/model/*</exclude>
-                        <exclude>com/upday/newsapi/repository/domain/*</exclude>
+                        <exclude>com/twitzer/newsapi/model/*</exclude>
+                        <exclude>com/twitzer/newsapi/repository/domain/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -139,12 +139,12 @@
                                         <limit implementation="org.jacoco.report.check.Limit">
                                             <counter>INSTRUCTION</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.50</minimum>
+                                            <minimum>0.65</minimum>
                                         </limit>
                                         <limit implementation="org.jacoco.report.check.Limit">
                                             <counter>COMPLEXITY</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.50</minimum>
+                                            <minimum>0.65</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
