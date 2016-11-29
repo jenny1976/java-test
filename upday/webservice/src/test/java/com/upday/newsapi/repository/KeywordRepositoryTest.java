@@ -24,29 +24,18 @@ public class KeywordRepositoryTest {
     @Autowired
     private KeywordRepository keywordRepository;
 
-    public KeywordRepositoryTest() {
-    }
-
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
-
     @Test
     public void testKeywordNameUniqueConstraint() {
         Keyword k1 = new Keyword("test1");
         Keyword k2 = new Keyword("test1");
 
-        keywordRepository.saveAndFlush(k1);
-        keywordRepository.saveAndFlush(new Keyword("Test1"));
+        keywordRepository.save(k1);
+        keywordRepository.save(new Keyword("Test1"));
 
         org.junit.Assert.assertEquals(6, keywordRepository.count());
 
         try {
-            keywordRepository.saveAndFlush(k2);
+            keywordRepository.save(k2);
             Assert.isTrue(false, "DataIntegrityViolationException wasn't thrown!");
         } catch( DataIntegrityViolationException ex) {
             Assert.isTrue(true, "should be thrown.");

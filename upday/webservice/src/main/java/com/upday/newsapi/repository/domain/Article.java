@@ -52,15 +52,16 @@ public class Article implements Persistable<Long> {
     private String mainText;
 
     @Column(name = "CREATED_ON", nullable = false)
-    @Type(type = "org.jadira.usertype.dateandtime.threeten.PersistentLocalDateTime")
+    @Type(type="org.hibernate.type.LocalDateTimeType")
     private LocalDateTime createdOn;
 
     @Column(name = "UPDATED_ON", nullable = false)
-    @Type(type = "org.jadira.usertype.dateandtime.threeten.PersistentLocalDateTime")
+//    @Type(type = "org.jadira.usertype.dateandtime.threeten.PersistentLocalDateTime")
+    @Type(type="org.hibernate.type.LocalDateTimeType")
     private LocalDateTime updatedOn;
 
     @Column(name = "PUBLISHED_ON")
-    @Type(type = "org.jadira.usertype.dateandtime.threeten.PersistentLocalDate")
+    @Type(type="org.hibernate.type.LocalDateType")
     private LocalDate publishedOn;
 
     @ManyToMany(cascade = CascadeType.ALL)
@@ -94,6 +95,9 @@ public class Article implements Persistable<Long> {
     )
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Keyword> keywords;
+
+    public Article() {
+    }
 
     public String getHeadline() {
         return headline;
