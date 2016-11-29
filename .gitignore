@@ -4,3 +4,5 @@
 /upday/webservice/.settings/org.eclipse.core.resources.prefs
 /upday/webservice/.settings/org.eclipse.m2e.core.prefs
 /upday/webservice/nbactions.xml
+.classpath
+.project
