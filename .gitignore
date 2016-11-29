@@ -6,3 +6,5 @@
 /upday/webservice/nbactions.xml
 .classpath
 .project
+/target/
+nbactions.xml
