@@ -138,9 +138,9 @@ public final class ModelConverter {
         }
 
         if (!CollectionUtils.isEmpty(article.getKeywords())) {
-            for (RsKeyword keyword : article.getKeywords()) {
+            article.getKeywords().stream().forEach((keyword) -> {
                 dbArticle.addKeyword(convertToJpaKeyword(keyword));
-            }
+            });
         }
         return dbArticle;
     }
