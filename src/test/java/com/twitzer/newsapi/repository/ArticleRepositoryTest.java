@@ -1,8 +1,5 @@
 package com.twitzer.newsapi.repository;
 
-import com.twitzer.newsapi.repository.KeywordRepository;
-import com.twitzer.newsapi.repository.AuthorRepository;
-import com.twitzer.newsapi.repository.ArticleRepository;
 import com.twitzer.newsapi.repository.domain.Article;
 import com.twitzer.newsapi.repository.domain.Author;
 import com.twitzer.newsapi.repository.domain.Keyword;
